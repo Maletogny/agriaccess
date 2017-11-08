@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Prototype | Home</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="fonts/"> -->
+	<link rel="stylesheet" href="linea/music_font.css">
+	<link rel="stylesheet" href="linea/basic/basic_font.css">
+  <link rel="stylesheet" href="slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+
+<style>
+	body{
+		font-family: biko-r;
+		font-size: 1.2em;
+	}
+	p{
+		font-family:Quattro-r;
+
+	}
+
+	.text-justify{
+		text-align:justify;
+        text-justify:auto;
+	}
+/*	.nav-item{
+		opacity: initial;
+	}*/
+
+  .static-img{
+    max-height: 350px;
+    overflow-y: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+.static-img img{
+      margin-top: -140px;
+}
+
+	.hide{
+	/*opacity: 0;*/
+	display: none;
+    /*-webkit-transition: opacity 2s ease-in;
+    -moz-transition: opacity 2s ease-in;
+    -o-transition: opacity 2s ease-in;
+    -ms-transition: opacity 2s ease-in;
+    transition: opacity 2s ease-in;*/
+	}
+	.selected{
+		/*background-color: #eeeeee;*/
+		/*border-color: linear-gradient(to left, #046e36, #37b246) ;*/
+		/*border-bottom-style: solid;*/
+		/*text-decoration: underline;*/
+		font-weight: bold;
+	}
+
+	/*.carousel-inner{
+		max-height: 442px;
+		overflow-y: hidden;
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+	}*/
+
+		.carousel-item img{
+		width: 100%;
+		height: 10%;
+		margin-top: -70px;
+		filter:grayscale(.3) contrast(1.1);
+
+	}
+
+	.text-green{
+		color: #39b449;
+	}
+
+	.contact{
+
+	background: #39b449;
+    color: white !important;
+    border-radius: 4px;
+	}
+
+  .shadow{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .team-img{
+		width: 222px;
+		height: 222px;
+		overflow-y: hidden;
+		cursor: pointer;
+	}
+
+	.teamInfo{
+		opacity: 1;
+		-webkit-transition: opacity 2s ease-in;
+		-moz-transition: opacity 2s ease-in;
+		-o-transition: opacity 2s ease-in;
+		-ms-transition: opacity 2s ease-in;
+		transition: opacity 2s ease-in;
+	}
+
+	.partner-item{
+		transition: 1s;
+	}
+
+	.img-select{
+		box-shadow: 0 10px 20px rgba(171, 171, 171, 0.58)
+	}
+
+	.teamName{
+		font-family: oswald-l;
+	}
+
+	.title{
+		font-family: oswald-r;
+	}
+
+	.partner-item{
+		filter: grayscale(1);
+	}
+	.partner-item:hover{
+		filter: grayscale(0);
+	}
+
+		/*.carousel-fade .carousel-inner .carousel-item {
+  opacity: 0;
+
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+}
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}*/
+
+/*.carousel-fade .carousel-item {
+
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+}*/
+
+/*Typography*/
+
+
+	@font-face{
+		font-family: Quattro-r;
+		src: url('fonts/Oswald and Quattrocento/quattrocento/Quattrocento-Regular.ttf') format('truetype');
+	}
+	@font-face{
+		font-family: Quattro-b;
+		src: url('fonts/Oswald and Quattrocento/quattrocento/Quattrocento-Bold.ttf') format('truetype');
+	}
+
+	@font-face{Oswald-l
+		font-family: Oswald-b;
+		src: url('fonts/Oswald and Quattrocento/oswald/Oswald-Bold.ttf') format('truetype');
+	}
+	@font-face{
+		font-family: Oswald-r;
+		src: url('fonts/Oswald and Quattrocento/oswald/Oswald-Regular.ttf') format('truetype');
+	}
+	@font-face{
+		font-family: Oswald-l;
+		src: url('fonts/Oswald and Quattrocento/oswald/Oswald-Light.ttf') format('truetype');
+	}
+
+		/*Biko typography*/
+	@font-face{
+		font-family: biko-bl;
+		src: url('fonts/biko/Biko_Black.otf') format('OpenType');
+	}
+	@font-face{
+		font-family: biko-b;
+		src: url('fonts/biko/Biko_Bold.otf') format('OpenType');
+	}
+	@font-face{
+		font-family: biko-r;
+		src: url('fonts/biko/Biko_Regular.otf') format('OpenType');
+	}
+	@font-face{
+		font-family: biko-l;
+		src: url('fonts/biko/Biko_Light-Restricted.otf') format('OpenType');
+	}
+
+/*// end typography*/
+
+.bg-carousel{
+	position: fixed;
+
+	filter:grayscale(1) contrast(1.8);
+	opacity: .2;
+	height: 100%;
+	width: 100%;
+}
+
+.bg-white{
+	background-color: white;
+}
+
+.title{
+	font-family: biko-b;
+}
+</style>
+</head>
+<body>
+
+<div class="bg-carousel"></div>
+<div class="container" id="mainContainer">
+	<nav class="navbar navbar-toggleable-md navbar-inverse">
+  <button class="navbar-toggler navbar-toggler-right contact" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <a class="navbar-brand ml-5 text-white" href="#"><img src="img/logo2.svg" alt="" height="50px"></a>
+    <div class="container">
+  <div class="collapse navbar-collapse justify-content-end text-center" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+			<a class="nav-item nav-link text-muted my-2 mx-sm-1 upCaps  " href="./index.html">Home</a>
+			<a class="nav-item nav-link text-muted my-2 mx-sm-1 upCaps " href="./about.html">About</a>
+			<a class="nav-item nav-link text-muted my-2 mx-sm-1 upCaps selected" href="./project.html">Projects</a>
+			<a class="nav-item nav-link text-muted my-2 mx-sm-1 upCaps services" href="./articles.html">Articles</a>
+			<a class="nav-item nav-link text-muted my-2 mx-sm-1 upCaps" href="./gallery.html">Gallery</a>
+			<a class="nav-item nav-link text-muted  my-2 mx-sm-1  upCaps" href="./contact.html">Contact</a>
+    </div>
+  </div>
+  </div>
+</nav>
+
+<!-- <div class="static-img">
+			<img class="img-fluid" src="./img/home-bg.jpg" alt="">
+		</div> -->
+
+<!-- Start container -->
+<div class="container bg-white shadow">
+
+<!-- About section start -->
+<section class="mt-5 ">
+	<div class="container mt-5 py-5">
+		<h2 class='text-uppercase font-weight-bold mx-auto text-center'>Our Projects</h2>
+</div>
+
+<ul class="nav justify-content-center nav nav-tabs " role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Farmers in India</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Sorghum Factory</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#messages" role="tab">Other projects</a>
+  </li>
+
+</ul>
+<div class="tab-content mt-5 pt-5">
+  <div class="tab-pane fade show active" id="home" role="tabpanel">
+      <div class="row">
+        <div class="col-6"><img src="holder.js/100px500" alt=""></div>
+        <div class="col-6">
+          <h1 class="h-4 text-center">Farmers in India</h1>
+          <p class="lead pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro nesciunt maiores reprehenderit blanditiis ipsum iste saepe consectetur adipisci placeat, earum amet dolorem facere eum voluptatum cum tempore officiis doloribus similique ad, rem? Blanditiis consectetur aperiam quos, aliquid nostrum eveniet sequi sit fugit vero alias aliquam hic unde odit veniam, autem.</p>
+        </div>
+      </div>
+
+    </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel">
+    <div class="row">
+      <div class="col-6"><img src="holder.js/100px500" alt=""></div>
+      <div class="col-6">
+        <h1 class="h-4 text-center">Sorghum Factory</h1>
+        <p class="lead pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro nesciunt maiores reprehenderit blanditiis ipsum iste saepe consectetur adipisci placeat, earum amet dolorem facere eum voluptatum cum tempore officiis doloribus similique ad, rem? Blanditiis consectetur aperiam quos, aliquid nostrum eveniet sequi sit fugit vero alias aliquam hic unde odit veniam, autem.</p>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="messages" role="tabpanel">
+    <div class="row">
+      <div class="col-6"><img src="holder.js/100px500" alt=""></div>
+      <div class="col-6">
+        <h1 class="h-4 text-center">Other projects</h1>
+        <p class="lead pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro nesciunt maiores reprehenderit blanditiis ipsum iste saepe consectetur adipisci placeat, earum amet dolorem facere eum voluptatum cum tempore officiis doloribus similique ad, rem? Blanditiis consectetur aperiam quos, aliquid nostrum eveniet sequi sit fugit vero alias aliquam hic unde odit veniam, autem.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<section class="py-5 my-5">
+
+  <div id="quote-carousel" class="carousel slide carousel-fade " data-ride="carousel">
+<h1 class="h-4 text-center">Testimonials</h1>
+    <!-- Carousel Slides / Quotes -->
+<div class="carousel-inner pt-2" role="listbox">
+
+<!-- Quote 1 -->
+<div class="carousel-item active">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Etiam porta sem malesuada magna mollis euismod. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.&rdquo;</p>
+      <small><strong>Vulputate M., Dolor</strong></small>
+    </div>
+  </div>
+</div>
+
+<!-- Quote 2 -->
+<div class="carousel-item">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>&ldquo;Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.&rdquo;</p>
+      <small><strong>Fringilla A., Vulputate Sit</strong></small>
+    </div>
+  </div>
+</div>
+
+<!-- Quote 3 -->
+<div class="carousel-item">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>&ldquo;Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum.&rdquo;</p>
+      <small><strong>Aenean A., Justo Cras</strong></small>
+    </div>
+  </div>
+</div>
+
+</div>
+  </div>
+</section>
+
+
+</div>
+<!--End general body container  -->
+</section>
+	<!-- footer start -->
+
+	<footer class="mt-5">
+	<div class="row mt-5">
+<!-- 		<div class="col-4 text-center">
+			<h4>Address</h4>
+			<p class="lead">
+			Agriaccess Ghana <br>
+			Adjacent SG-SSB, <br>
+			same building with SIC, WA. <br>
+			Upper West Regon, Ghana.
+			</p>
+		</div>
+		<div class="col-4">
+			<h4 class="h4">Email Us</h4>
+			<p class="lead">
+				info@agriaccessgh.com
+			</p>
+		</div>
+		<div class="col-4">
+			<h4 class="h4">Call US On</h4>
+			<p class="lead">
+			Phone: +233(0)20 666 6004 <br>
+			Mobile: +233(0)39 202 1346
+			</p>
+		</div> -->
+	</div>
+		<div class="row">
+			<h6 class="h6 mx-auto">© Copyright Agriaccess Ghana Limited 2017</h6>
+		</div>
+	</footer>
+
+		<!-- //end mainContainer -->
+</div>
+
+
+
+
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/holder.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+
+<script type="text/javascript">
+// $(document).ready(function(){
+
+
+// 	$('.carousel').carousel({
+//   interval: 5000,
+//   duration: 500,
+//   // pause: false
+// })
+// var child = $('.carousel-inner').children('.active').children('img').attr('src');
+
+// $('.carousel').on('slid.bs.carousel', function(){
+// 	child = $('.carousel-inner').children('.active').children('img').attr('src');
+// 	$('.bg-carousel').fadeOut(700, function(){
+// 		$(this).css({background: 'url('+child+')'})
+// 	console.log(child);
+// }).fadeIn(700);
+// })
+	$('.bg-carousel').css({background: 'url("img/home-bg.jpg")'})
+	console.log(child);
+// })
+
+$(document).ready(function() {
+  //carousel options
+  $('#quote-carousel').carousel({
+    pause: true, interval: 10000,
+  });
+});
+
+$('.teamInfoContainer').html($('.teamInfo').html())
+$('.team-img').click(function(){
+$('.team-img').removeClass('img-select');
+$(this).addClass('img-select');
+var $teamInfo =	$(this).siblings('.teamInfo').html();
+// $('.teamInfoContainer').html($teamInfo)
+$('.teamInfoContainer').animate({'opacity': 0}, 500, function () {
+    // $(this).html($teamInfo);
+}).animate({'opacity': 1}, 500);
+
+});
+
+
+$('#partners').slick({
+dots: true,
+infinite: false,
+speed: 300,
+slidesToShow: 3,
+slidesToScroll: 3,
+autoplay: true,
+infinite: true,
+responsive: [
+  {
+    breakpoint: 1024,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 2,
+      infinite: true,
+      dots: true
+    }
+  },
+  {
+    breakpoint: 600,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 2
+    }
+  },
+  {
+    breakpoint: 480,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1
+    }
+  }
+
+]
+});
+
+</script>
+</body>
+</html>
